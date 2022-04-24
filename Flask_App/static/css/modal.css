@@ -1,0 +1,22 @@
+.modal-content
+{
+	text-align: center;
+}
+
+#buton
+{
+	justify-content: center;
+	background: none;
+	width: 100px;
+	height: 24px;
+	border: 1px solid #000000;
+	font-size: 13px;
+	border-radius: 15px;
+	transition: .6s;
+	overflow: hidden;
+}
+
+.modal-content
+{
+	justify-content: center;
+}

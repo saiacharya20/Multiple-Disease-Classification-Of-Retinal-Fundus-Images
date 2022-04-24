@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classifier</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.scss') }}">
+
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="static/images/favicon.png" type="">
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.css') }}" />
+
+  <!-- fonts style -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@100&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="{{ url_for('static',filename='css/font-awesome.min.css') }}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static',filename='css/responsive.css') }}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static',filename='css/modal.css') }}" rel="stylesheet" />
+
+</head>
+
+<body>
+  <div class="hero_area">
+
+    <!-- navbar -->
+
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="/">
+            <img src="static/images/logo.png" alt="">
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/prediction">Classifier</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about_us"> About Us</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- navbar -->
+    
+    <div class="image_upload">
+
+      <!-- For demo purpose -->
+      <header class="text-white text-center">
+        <h1 class="display-4">Upload the Retinal Fundus Image</h1>
+        <img style="margin-top: 20px;" src="static/images/eye-solid.svg" alt="" width="150" class="mb-4">
+      </header>
+
+
+      <div class="row py-4">
+        <div class="col-lg-6 mx-auto">
+
+          <!-- Uploaded image area-->
+          <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div><br><br>
+          
+          <!-- Upload image input-->
+          <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
+
+            <form action='prediction' method=POST enctype="multipart/form-data">
+              <input id="upload" type="file" name="img" onchange="readURL(this);" class="form-control border-0" required>
+              <label id="upload-label" for="upload" class="font-weight-light text-muted">Choose file</label>
+              <div class="input-group-append">
+                <label for="upload" class="btn btn-light m-0 rounded-pill px-4"> <small class="text-uppercase font-weight-bold text-muted">Choose file</small></label>
+              </div>
+           
+          </div>
+
+          
+          <div class="submit_button text-center ">
+            <button style="width: 300px; background-color: #07ad65;" type="submit" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-lg">Submit</button>
+          </div>
+
+        </form>
+        <button hidden="hidden" id="btn" style= "width: 10px;"type="button"></button>
+
+
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+
+                <div class="modal fade" id="RetiScan">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+
+                      <div class="modal-header justify-content-center">
+                        <h1>Results</h1>
+                      </div>
+                      <div class="modal-body">
+
+                        <div class="text-center">
+
+                          <div style="height: 150px;">
+                            <img src="{{ url_for('static', filename=filename) }}" width="150" ,height="150">
+
+                          </div>
+
+                        </div>
+                        <br>
+                        <div class="text-center">
+                          <div>
+                            The Uploaded scan of the Retinal Fundus image shows the presence of: {{ dis }}
+                          </div>
+                          <br>
+                          <div>
+                            The accuracy of the predicted disease is: {{ accuracy }}
+
+                          </div>
+                          <br>
+                          <div>
+                            The accuracy of {{ dis1 }} is:
+                            <div class="progress">
+                              <div class="progress-bar bg-success" role="progressbar" style="width: 0%; color: black;"
+                                aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">{{ ac1 }}</div>
+                            </div>
+                          </div>
+
+                          <div>
+                            The accuracy of {{ dis2 }} is:
+                            <div class="progress">
+                              <div class="progress-bar1 bg-warning" role="progressbar" style="width: 0%; color: black;"
+                                aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">{{ ac2 }}</div>
+                            </div>
+                          </div>
+
+                          <div>
+                            The accuracy of {{ dis3 }} is:
+                            <div class="progress">
+                              <div class="progress-bar2" role="progressbar" style="width: 0%; color: black;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">{{ ac3 }}</div></div>
+                          </div>
+                        </div>
+
+                      </div>
+
+                      <div class="modal-footer justify-content-center">
+                        <button  style="background-color: #07ad65; width: 170px; border-radius: 5px;" data-dismiss="modal" value="Close">Close</button>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <!-- footer section -->
+
+    <footer class="footer_section">
+      <div class="container">
+        <div class="footer-info">
+          <p>
+            &copy; <span id="displayYear"></span> All Rights Reserved By RetiScan.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- footer section -->
+
+    <!-- jQery -->
+    <script type="text/javascript" src="{{ url_for('static',filename='script/jquery-3.4.1.min.js') }}"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+      </script>
+    <!-- bootstrap js -->
+    <script type="text/javascript" src="{{ url_for('static',filename='script/bootstrap.js') }}"></script>
+    <!-- owl slider -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <!-- custom js -->
+    <script type="text/javascript" src="{{ url_for('static',filename='script/custom.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='script/modal.js') }}"></script>
+
+    <script>
+      var valu ='{{ var }}';
+      if(valu == "modal"){
+        document.getElementById("btn").click();
+      } 
+      var val = '{{ ac1 }}';
+      var val1 = '{{ ac2 }}';
+      var val2 = '{{ ac3 }}';
+      var progressBar = $('.progress-bar');
+      var progressBar1 = $('.progress-bar1');
+      var progressBar2 = $('.progress-bar2');
+      var progressNumber = 0;
+
+      setInterval(function () {
+        if (progressNumber = val) {
+          progressNumber++;
+          progressBar.css('width', progressNumber + '%');
+          progressBar.attr('aria-valuenow', progressNumber)
+        }
+      }, 100);
+
+      setInterval(function () {
+        if (progressNumber = val1) {
+          progressNumber++;
+          progressBar1.css('width', progressNumber + '%');
+          progressBar1.attr('aria-valuenow', progressNumber)
+        }
+      }, 100);
+
+      setInterval(function () {
+        if (progressNumber = val2) {
+          progressNumber++;
+          progressBar2.css('width', progressNumber + '%');
+          progressBar2.attr('aria-valuenow', progressNumber)
+        }
+      }, 100);
+
+
+    </script>
+
+</body>
+
+</html>

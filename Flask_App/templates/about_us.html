@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.scss') }}">
+  
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="static/images/favicon.png" type="">
+  
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.css') }}" />
+  
+    <!-- fonts style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Palanquin&display=swap" rel="stylesheet">
+  
+    <!--owl slider stylesheet -->
+    <link rel="stylesheet" type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  
+    <!-- font awesome style -->
+    <link href="{{ url_for('static',filename='css/font-awesome.min.css') }}" rel="stylesheet" />
+  
+    <!-- Custom styles for this template -->
+    <link href="{{ url_for('static',filename='css/responsive.css') }}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static',filename='css/modal.css') }}" rel="stylesheet" />
+  
+  </head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+
+    <!-- navbar -->
+
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="/">
+            <img src="static/images/logo.png" alt="">
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/prediction">Classifier</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about_us"> About Us</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+  
+  <!-- end header section -->
+  
+  <!-- team section -->
+  
+    <section class="developer_section layout_padding" style="background: #77d0aa; ">
+      <div class="container">
+        <div class="heading_container heading_center">
+          <h2 style="font-size: 50px; color: rgb(33, 33, 157);">
+           <strong>Meet Our Team</strong> 
+          </h2>
+          <br>
+          <p class="col-md-10 mx-auto px-0" style="color: white; font-size: 20px; font-family: 'Palanquin', sans-serif;">
+           Meet the Creative, self-organizing, cross-functional team of people who collectively are responsible for all of the work necessary to produce the Functionality of the Application.
+          </p>
+        </div>
+        <br><br>
+         
+      
+      <!-- bootstrap about team card -->
+  
+        <div class="row">
+          <div class="col-sm-6 col-lg-4 ">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="static/images/aloy.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align: center;"><em>Aloysius Carvalho</em></h5>
+                <p class="card-text" style="text-align: center;">Developer</p>
+                <div class="social_box" style="text-align: center; width: 100%;">
+                  <a href="https://www.linkedin.com/in/aloysius-c-b2b529135">
+                    <i class="fa fa-linkedin"  aria-hidden="true"></i>
+                  </a>
+                  <a href="https://wa.me/+917350711333">
+                    <i class="fa fa-whatsapp" style="margin-left: 15px;"  aria-hidden="true"></i>
+                  </a>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 mx-auto">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="static/images/sai1.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align: center;"><em>Sai Acharya</em></h5>
+                <p class="card-text" style="text-align: center;">Developer</p>
+                <div class="social_box" style="text-align: center; width: 100%;">
+                  <a href="https://www.linkedin.com/in/saiacharya">
+                    <i class="fa fa-linkedin"  aria-hidden="true"></i>
+                  </a>
+                  <a href="https://wa.me/+918605502111">
+                    <i class="fa fa-whatsapp" style="margin-left: 15px;"  aria-hidden="true"></i>
+                  </a>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 mx-auto">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="static/images/leon.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align: center;"><em>Leon Menezes</em> </h5>
+                <p class="card-text" style="text-align: center;">Developer</p>
+                <div class="social_box" style="text-align: center; width: 100%;">
+                  <a href="https://www.linkedin.com/in/leon-menezes-9025b5168">
+                    <i class="fa fa-linkedin"  aria-hidden="true"></i>
+                  </a>
+                  <a href="https://wa.me/+918010195183">
+                    <i class="fa fa-whatsapp" style="margin-left: 15px;"  aria-hidden="true"></i>
+                  </a>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br><br>
+        <div class="row">
+          <div class="col-sm-6 col-lg-4 mx-auto">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="static/images/somu3.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align: center;"><em>Somdutt Vernekar</em></h5>
+                <p class="card-text" style="text-align: center;">Developer</p>
+                <div class="social_box" style="text-align: center; width: 100%;">
+                  <a href="https://www.linkedin.com/in/somdutt-vernekar-204603169">
+                    <i class="fa fa-linkedin"  aria-hidden="true"></i>
+                  </a>
+                  <a href="https://wa.me/+918552875676">
+                    <i class="fa fa-whatsapp" style="margin-left: 15px;"  aria-hidden="true"></i>
+                  </a>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-4 mx-auto">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="static/images/aryan2.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title" style="text-align: center; "><em>Aryan Sawkar</em></h5>
+                <p class="card-text" style="text-align: center;">Developer</p>
+                <div class="social_box" style="text-align: center; width: 100%;">
+                  <a href="https://www.linkedin.com/in/aryan-sawkar-2a3533168">
+                    <i class="fa fa-linkedin"  aria-hidden="true"></i>
+                  </a>
+                  <a href="https://wa.me/+919146354380">
+                    <i class="fa fa-whatsapp" style="margin-left: 15px;"  aria-hidden="true"></i>
+                  </a>
+              </div>
+              </div><br>
+            </div>
+          </div>  
+        </div>
+  
+      </div>
+    </section>
+     <!-- end section -->
+  
+     <!-- team say section -->
+      <section class="developer_section layout_padding" >
+        <div class="container">
+          <div class="heading_container heading_center">
+            <h2 style="font-size: 50px; color: rgb(33, 33, 157);">
+             <strong>Hear what the team has to say</strong> 
+            </h2>
+            <br>
+            <p class="col-md-10 mx-auto px-0" style="color: #1d1d1d; font-size: 20px; font-family: 'Palanquin', sans-serif;">
+             "We are motivated to combine medicine and modern technology like AI, Machine Learning for our final Year project. The eye is an important part of our lives as it gives us vision and any loss to vision is a big blow. So we decided to leverage Machine learning Techniques on retinal fundus images to detect the diseases timely to prevent further damage. The result of our work is what you are seeing right now."
+            </p>
+          </div>
+        </div>  
+      </section>
+  
+  
+    <!-- end team say section -->
+    </div>
+  
+    <!-- footer section -->
+  
+      <footer class="footer_section">
+        <div class="container">
+          <div class="footer-info">
+            <p>
+              &copy; <span id="displayYear"></span> All Rights Reserved By RetiScan.
+            </p>    
+          </div>  
+        </div>
+      </footer>
+  
+    <!-- footer section -->
+  
+    <!-- jQery -->
+    <script type="text/javascript" src="{{ url_for('static',filename='script/jquery-3.4.1.min.js') }}"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <!-- bootstrap js -->
+    <script type="text/javascript" src="{{ url_for('static',filename='script/bootstrap.js') }}"></script>
+    <!-- owl slider -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+    </script>
+    <!-- custom js -->
+    <script type="text/javascript" src="{{ url_for('static',filename='script/custom.js') }}"></script>
+  
+  </body>
+</html>

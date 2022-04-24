@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.scss') }}">
+
+  
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="static/images/favicon.png" type="">
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.css') }}" />
+
+  <!-- fonts style -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Palanquin&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style --> 
+  <link href="{{ url_for('static',filename='css/font-awesome.min.css') }}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static',filename='css/responsive.css') }}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{ url_for('static',filename='css/style.css') }}" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="hero_area">
+
+        <!-- navbar -->
+    
+        <header class="header_section">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg custom_nav-container ">
+                <a class="navbar-brand" href="/">
+                  <img  src="static/images/logo.png" alt="">
+                </a>
+            
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class=""> </span>
+                </button>
+            
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/prediction">Classifier</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about_us"> About Us</a>
+                    </li>
+                    </ul>
+                </div>
+                </nav>
+            </div>
+            </header>
+            
+    
+        <!-- navbar -->
+    
+        <!-- slider section -->
+        <section class="slider_section ">
+          <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="container ">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <div class="detail-box">
+                        <h1 style="color: rgb(33, 33, 157)">
+                          What is RetiScan?
+                        </h1>
+                        <p style="font-size: 20px;">
+                          RetiScan identifies multiple diseases such as Diabetic retinopathy (DR), Media Haze (MH), Optic disc cupping (ODC) using retinal fundus images and displays the results to the user.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item ">
+                <div class="container ">
+                  <div class="row">
+                    <div class="col-md-7">
+                      <div class="detail-box">
+                        <h1 style="color: rgb(33, 33, 157);">
+                          Why use our application?
+                        </h1>
+                        <p style="font-size: 20px;">
+                          Retinal imaging allows eye doctors to see signs of eye diseases that they could not see before. The test itself is painless and the results are easy for doctors to interpret. Our system analyses your retinal images and gives you accurate predicted results. 
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="container ">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <div class="detail-box">
+                        <h1 style="color: rgb(33, 33, 157)"">
+                         How does it work?
+                        </h1>
+                        <p style="font-size: 20px;">
+                          This application uses a Deep Learning approach in which the processed images will be fed into a Convolutional Neural Network (CNN) to predict whether the patient is suffering from the disease.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <ol class="carousel-indicators">
+              <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+              <li data-target="#customCarousel1" data-slide-to="1"></li>
+              <li data-target="#customCarousel1" data-slide-to="2"></li>
+            </ol>
+            <div class="d-none d-lg-block eye_box">
+              <img src="../static/images/eye.gif" alt="">
+            </div> 
+            <div class="text-center" style="float: left; margin-left: 18em; margin-top: 50px;">
+              <a href="/prediction">
+              <button type="button" class="btn btn-dark rounded-pill" style="width:300px; text-align: center; background-color:rgb(10, 46, 136);">Get Started <i class="bi bi-arrow-right"></i></button></a>
+            </div>
+          </div> 
+        </section>
+        <!-- end slider section -->
+      </div>
+      <br><br>
+
+      
+      <!-- facts -->
+        <section class="developer_section " >
+          <div class="container">
+            <div class="heading_container heading_center">
+              <h2 style="font-size: 50px;"><br><br>
+               <strong>The Human eye</strong> 
+              </h2>
+              <br>
+              <img src="static/images/eye.jpg" alt="eye.png" style="width: 300px; height: 200px; border-radius: 20%;">
+              <br>
+              <p class="col-md-10 mx-auto px-0" style="color: #1d1d1d; font-size: 20px; font-family: 'Palanquin', sans-serif;">
+                 Your eyes are an important part of your health. Most people rely on their eyes to see and make sense of the world around them. But some eye diseases can lead to vision loss, so it is important to identify and treat eye diseases as early as possible.
+              </p>
+            </div>
+            <br><br><br><br><hr><br><br><br><br>
+            <div class="heading_container heading_center">
+              <h2 style="font-size: 50px;">
+               <strong>Early Detection of retinal diseases</strong> 
+              </h2>
+              <br>
+              <img src="static/images/check.jpg" alt="eyecheck.png" style="width: 300px; height: 200px; border-radius: 20%;">
+              <br>
+              <p class="col-md-10 mx-auto px-0" style="color: #1d1d1d; font-size: 20px; font-family: 'Palanquin', sans-serif;">
+                 Early detection of eye diseases is key to the treatment of them. For the more common eye diseases, damage done to the sophisticated tissues in your eyes can't be undone, resulting in permanent degradation or loss of sight. 
+              </p>
+            </div>
+            <br><br><br><br><hr><br><br><br><br>
+            <div class="heading_container heading_center">
+              <h2 style="font-size: 50px;">
+               <strong>Using Deep Learning for Retinal disease detection</strong> 
+              </h2>
+              <br>
+              <img src="../static/images/ml.jpeg" alt="ml.png" style="width: 300px; height: 200px; border-radius: 20%;">
+              <br>
+              <p class="col-md-10 mx-auto px-0" style="color: #1d1d1d; font-size: 20px; font-family: 'Palanquin', sans-serif;">
+               Deep learning has been largely reported to be capable of achieving automated screening and diagnosis of common vision-threatening diseases, such as Diabetic retinopathy (DR), Media Haze (MH) and Optic disc cupping (ODC).
+               Further integration of DL into ophthalmology clinical practice is expected to innovate and improve the current disease and management process, including an earlier detection and hopefully better disease outcomes. 
+              </p>
+            </div>
+            <br><br><br><br><br><br><br><br>
+          </div>  
+        </section>
+       
+      <!-- end facts section -->
+    
+      <!-- getting started section -->
+      <section style="background-color: #ADD8E6;" >
+      <div class="container" >
+        <h2 style="font-size: 50px; text-align: center;">
+          <br>
+          <strong>Get started with RetiScan.</strong> 
+         </h2>
+         <br>
+         <div class="text-center">
+         <a href="/prediction">
+         <button type="button" class="btn btn-dark rounded-pill" style="text-align: center;">Take me there <i class="bi bi-arrow-right"></i> </button></a>
+         </div>
+         <br><br>
+        </section>
+      </div>
+    
+    
+    <!-- end getting started section section -->
+    
+      <!-- Modules section -->
+    
+      <section class="module_section layout_padding">
+        <div class="module_container">
+          <div class="container ">
+            <div class="heading_container heading_center">
+              <h2 style="font-size: 50px;">Modules Used</h2><br><br><br>
+            </div>
+            <div class="row row1  ">
+                <div class="col-sm-2  mx-auto ">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Keras_logo.svg/1024px-Keras_logo.svg.png" alt=""style="width:100px; margin-left:30px" class="x">
+                </div>
+                <div class="col-sm-2 mx-auto">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/NumPy_logo_2020.svg/1920px-NumPy_logo_2020.svg.png" alt=""style="width:140px" class="x">
+                </div>
+                <div class="col-sm-2 mx-auto">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/1920px-Pandas_logo.svg.png" alt=""style="width:140px" class="x">
+                </div>
+                <div class="col-sm-2 mx-auto">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Scikit_learn_logo_small.svg/1200px-Scikit_learn_logo_small.svg.png" alt=""style="width:140px" class="x">
+                </div>
+                <div class="col-sm-2 mx-auto">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/TensorFlow_logo.svg/1920px-TensorFlow_logo.svg.png" alt=""style="width:140px" >
+                </div>
+              </div>
+            </div>
+            <br> 
+          </div>
+        </div>
+      </section>
+    
+      <!-- end Modules section -->
+    
+      <!-- footer section -->
+    
+      <footer class="footer_section">
+        <div class="container">
+          <div class="footer-info">
+            <p>
+              &copy; <span id="displayYear"></span> All Rights Reserved By RetiScan.
+            </p>    
+          </div>  
+        </div>
+      </footer>
+    
+      <!-- footer section -->
+    
+      <!-- jQery -->
+      <script type="text/javascript" src="{{ url_for('static',filename='script/jquery-3.4.1.min.js') }}"></script>
+      <!-- popper js -->
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+      </script>
+      <!-- bootstrap js -->
+      <script type="text/javascript" src="{{ url_for('static',filename='script/bootstrap.js') }}"></script>
+      <!-- owl slider -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+      </script>
+      <!-- custom js -->
+      <script type="text/javascript" src="{{ url_for('static',filename='script/custom.js') }}"></script>
+<!-- <a href="/load_pred">Predict page</a> -->
+</body>
+</html>
